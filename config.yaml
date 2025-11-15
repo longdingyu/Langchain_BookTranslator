@@ -1,0 +1,7 @@
+model_name: "GLM-4.5"
+input_file: "test/test.pdf"
+model_type: "GLMModel"
+api_key: "b6a313e314294d418574ad06da9e86c7.VmBNlqqTKfQpSwkA"
+file_format: "pdf"
+source_language: "English"
+target_language: "Chinese"
