@@ -6,8 +6,6 @@ if __name__ == '__main__':
     # 初始化项目配置
     config = ProjectConfig()
     config.initialize()
-    os.environ.pop( 'http_proxy', None )
-    os.environ.pop( 'https_proxy', None )
 
     # 初始化 LLM
     if config.model_type == 'OpenAIModel':

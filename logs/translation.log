@@ -3544,3 +3544,65 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
  
 20251114 21:29:00 - MainProcess | MainThread | file_writer.save_book_pdf:46 - DEBUG -pdf原文件路径是：test/test.pdf, 翻译之后的输出文件路径: test/test_translated.pdf
 20251114 21:29:00 - MainProcess | MainThread | file_writer.save_book_pdf:92 - INFO -pdf文件写入完成！
+20251116 22:43:54 - MainProcess | AnyIO worker thread | file_writer.save_book_pdf:46 - DEBUG -pdf原文件路径是：C:\Users\longdingyu\AppData\Local\Temp\gradio\4628d2036e4153db898b14ae011394640ab1e7fe10f0fba0ada727e70f3fcde6\test_translated.pdf, 翻译之后的输出文件路径: C:\Users\longdingyu\AppData\Local\Temp\gradio\4628d2036e4153db898b14ae011394640ab1e7fe10f0fba0ada727e70f3fcde6\test_translated_translated.pdf
+20251116 22:43:54 - MainProcess | AnyIO worker thread | file_writer.save_book_pdf:92 - INFO -pdf文件写入完成！
+20251116 22:45:22 - MainProcess | AnyIO worker thread | pdf_parser.parse_pdf:55 - DEBUG -[pdf解析之后的文本内容]: 
+Test Data
+This dataset contains two test samples provided by ChatGPT, an AI language model by OpenAI.
+These samples include a markdown table and an English text passage, which can be used to test an
+English-to-Chinese translation software supporting both text and table formats.
+Text testing
+The quick brown fox jumps over the lazy dog. This pangram contains every letter of the English
+alphabet at least once. Pangrams are often used to test fonts, keyboards, and other text-related
+tools. In addition to English, there are pangrams in many other languages. Some pangrams are more
+difficult to construct due to the unique characteristics of the language.
+Table Testing
+20251116 22:45:22 - MainProcess | AnyIO worker thread | pdf_parser.parse_pdf:61 - DEBUG -[pdf解析之后的表格内容]: 
+[[['Fruit', 'Color', 'Price (USD)'], ['Apple', 'Red', '1.20'], ['Banana', 'Yellow', '0.50'], ['Orange', 'Orange', '0.80'], ['Strawberry', 'Red', '2.50'], ['Blueberry', 'Blue', '3.00'], ['Kiwi', 'Green', '1.00'], ['Mango', 'Orange', '1.50'], ['Grape', 'Purple', '2.00']]]
+20251116 22:45:37 - MainProcess | AnyIO worker thread | translator_chain.run:44 - INFO -测试数据
+这个数据集包含两个由ChatGPT提供的测试样本，ChatGPT是OpenAI开发的人工智能语言模型。
+这些样本包括一个markdown表格和一个英文文本段落，它们可以用来测试支持文本和表格格式的英译中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过了懒惰的狗。这个全字母句包含了英文字母表中的每个字母至少一次。全字母句通常被用来测试字体、键盘和其他文本相关工具。除了英语，许多其他语言中也有全字母句。由于语言的独特特性，一些全字母句更难构建。
+表格测试
+20251116 22:45:37 - MainProcess | AnyIO worker thread | book_translator.translate_book:39 - DEBUG -翻译之后的内容是: 
+ 测试数据
+这个数据集包含两个由ChatGPT提供的测试样本，ChatGPT是OpenAI开发的人工智能语言模型。
+这些样本包括一个markdown表格和一个英文文本段落，它们可以用来测试支持文本和表格格式的英译中翻译软件。
+文本测试
+敏捷的棕色狐狸跳过了懒惰的狗。这个全字母句包含了英文字母表中的每个字母至少一次。全字母句通常被用来测试字体、键盘和其他文本相关工具。除了英语，许多其他语言中也有全字母句。由于语言的独特特性，一些全字母句更难构建。
+表格测试
+20251116 22:45:37 - MainProcess | AnyIO worker thread | translator_chain.run:36 - INFO -+++++++++++++
+20251116 22:45:59 - MainProcess | AnyIO worker thread | translator_chain.run:44 - INFO -水果, 颜色, 价格（美元）
+苹果, 红色, 1.20
+香蕉, 黄色, 0.50
+橙子, 橙色, 0.80
+草莓, 红色, 2.50
+蓝莓, 蓝色, 3.00
+猕猴桃, 绿色, 1.00
+芒果, 橙色, 1.50
+葡萄, 紫色, 2.00
+20251116 22:45:59 - MainProcess | AnyIO worker thread | book_translator.translate_book:39 - DEBUG -翻译之后的内容是: 
+ 水果, 颜色, 价格（美元）
+苹果, 红色, 1.20
+香蕉, 黄色, 0.50
+橙子, 橙色, 0.80
+草莓, 红色, 2.50
+蓝莓, 蓝色, 3.00
+猕猴桃, 绿色, 1.00
+芒果, 橙色, 1.50
+葡萄, 紫色, 2.00
+20251116 22:45:59 - MainProcess | AnyIO worker thread | content.set_translation:69 - DEBUG -[['水果', ' 颜色', ' 价格（美元）'], ['苹果', ' 红色', ' 1.20'], ['香蕉', ' 黄色', ' 0.50'], ['橙子', ' 橙色', ' 0.80'], ['草莓', ' 红色', ' 2.50'], ['蓝莓', ' 蓝色', ' 3.00'], ['猕猴桃', ' 绿色', ' 1.00'], ['芒果', ' 橙色', ' 1.50'], ['葡萄', ' 紫色', ' 2.00']]
+20251116 22:45:59 - MainProcess | AnyIO worker thread | content.set_translation:74 - DEBUG -处理成DataFrame数据：
+     0    1        2
+0   水果   颜色   价格（美元）
+1   苹果   红色     1.20
+2   香蕉   黄色     0.50
+3   橙子   橙色     0.80
+4   草莓   红色     2.50
+5   蓝莓   蓝色     3.00
+6  猕猴桃   绿色     1.00
+7   芒果   橙色     1.50
+8   葡萄   紫色     2.00
+20251116 22:45:59 - MainProcess | AnyIO worker thread | file_writer.save_book_pdf:46 - DEBUG -pdf原文件路径是：C:\Users\longdingyu\AppData\Local\Temp\gradio\d258c6af80980989909e451ebf8bcd561f35e5db0790fdb4fa74c56b143d8671\test.pdf, 翻译之后的输出文件路径: C:\Users\longdingyu\AppData\Local\Temp\gradio\d258c6af80980989909e451ebf8bcd561f35e5db0790fdb4fa74c56b143d8671\test_translated.pdf
+20251116 22:45:59 - MainProcess | AnyIO worker thread | file_writer.save_book_pdf:92 - INFO -pdf文件写入完成！

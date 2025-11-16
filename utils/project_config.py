@@ -26,9 +26,18 @@ class ProjectConfig:
         :return:
         """
         # 环境变量配置的初始化
-        os.environ['http_proxy'] = '127.0.0.1:7890'
-        os.environ['https_proxy'] = '127.0.0.1:7890'
+        # os.environ['http_proxy'] = '127.0.0.1:7890'
+        # os.environ['https_proxy'] = '127.0.0.1:7890'
 
+        # 动态设置代理，避免硬编码
+        proxy_url = os.getenv( 'HTTP_PROXY' ) or os.getenv( 'HTTPS_PROXY' )
+        if proxy_url:
+            os.environ[ 'http_proxy' ] = proxy_url
+            os.environ[ 'https_proxy' ] = proxy_url
+        else:
+            # 如果没有设置代理环境变量，则清理可能存在的代理设置
+            os.environ.pop( 'http_proxy', None )
+            os.environ.pop( 'https_proxy', None )
 
 
         # 命令行参数 配置的初始化
